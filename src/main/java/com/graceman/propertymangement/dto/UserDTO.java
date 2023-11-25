@@ -3,7 +3,9 @@ package com.graceman.propertymangement.dto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.validation.constraints.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
@@ -13,6 +15,8 @@ import lombok.Setter;
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserDTO {
     private Long id;
     private String ownerName;
@@ -30,5 +34,12 @@ public class UserDTO {
     private String city;
     private String postalCode;
     private String country;
+    private String token;
 
+    public UserDTO(String ownerName, String ownerEmail, String phone, String token) {
+        this.ownerName = ownerName;
+        this.ownerEmail = ownerEmail;
+        this.phone = phone;
+        this.token = token;
+    }
 }

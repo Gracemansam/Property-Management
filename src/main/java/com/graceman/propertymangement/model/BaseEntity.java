@@ -22,8 +22,8 @@ public  abstract class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Date CreatedAt;
-    private Date UpdatedAt;
+    private Date CreatedAt = new Date();
+    private Date UpdatedAt = new Date();
 
 
 }

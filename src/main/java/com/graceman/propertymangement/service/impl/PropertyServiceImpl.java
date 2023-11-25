@@ -39,13 +39,13 @@ public class PropertyServiceImpl implements PropertyService {
 
             propertyDTO = propertyConverter.convertEntityToDTO(pe);
         }else{
-            List<ErrorModel> errorModelList = new ArrayList<>();
+//            List<ErrorModel> errorModelList = new ArrayList<>();
             ErrorModel errorModel = new ErrorModel();
             errorModel.setCode("USER_ID_NOT_EXIST");
             errorModel.setMessage("User does not exist");
-            errorModelList.add(errorModel);
+//            errorModelList.add(errorModel);
 
-            throw new BusinessException(errorModelList);
+            throw new BusinessException(errorModel);
         }
         return propertyDTO;
     }
